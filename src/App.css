@@ -1,0 +1,123 @@
+body {
+  font-family: Montserrat, sans-serif;
+}
+:root {
+  --color-748C70: #748c70;
+  --color-0C0C0C: #0c0c0c;
+  --color-FFFFFF: #ffffff;
+}
+.error {
+  color: #c30000;
+}
+.error-light {
+  color: #ed2e2e;
+}
+.error-bg {
+  color: #fff2f2;
+}
+.warning {
+  color: #e09126;
+}
+.warning-light {
+  color: #ecbb77;
+}
+.warning-bg {
+  color: #f7e4c9;
+}
+.success {
+  color: #00966d;
+}
+.success-light {
+  color: #00ba88;
+}
+.success-bg {
+  color: #f3fdfa;
+}
+.black {
+  color: #0c0c0c;
+}
+.gray {
+  color: #202020;
+}
+.gray-40 {
+  color: #404040;
+}
+.gray-60 {
+  color: #606060;
+}
+.gray-86 {
+  color: #868686;
+}
+.primary {
+  color: #0d100c;
+}
+.primary-80 {
+  color: #272f25;
+}
+.primary-75 {
+  background-color: #343e32;
+}
+.bg-primary-75 {
+  background-color: #343e32;
+}
+.bg-primary-80 {
+  background-color: #272f25;
+}
+
+.ps {
+  font-size: 14px;
+}
+footer {
+  color: white;
+  background-color: #404040;
+}
+/* Header  */
+.header-top-bg {
+  background-color: #5a6d57;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Header End */
+
+/* Login and Singup */
+/* .login,
+.signup {
+  padding: 20px;
+  margin-top: 30px;
+  min-width: 25rem;
+  max-width: 30rem;
+} */
+/* .poster {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+} */
+/* .poster img {
+  height: 90vh;
+} */
+.login-btn,
+.logout-btn,
+.subscribe-btn {
+  background-color: var(--color-748C70);
+  color: var(--color-FFFFFF);
+  /* padding: 10px; */
+}
+.login-btn:hover,
+.logout-btn:hover,
+.subscribe-btn:hover {
+  transition: 100ms;
+  background-color: #343e32;
+  color: var(--color-FFFFFF);
+}
+.link-color {
+  color: #748c70;
+}
+.link-color:hover {
+  color: #343e32;
+  font-weight: 500;
+}
+
+/* Login and Signup End */
