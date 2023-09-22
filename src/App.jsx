@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
+import ProductOrder from "./pages/ProductOrder";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -19,6 +20,7 @@ function App() {
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />
             <Route path="products" element={<Products />} />
+            <Route path="p/:id" element={<ProductOrder />} />
           </Route>
         </Routes>
       </BrowserRouter>

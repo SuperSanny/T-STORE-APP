@@ -9,15 +9,23 @@ const Navbar = () => {
   }
   return (
     <>
-      <div className="primary-80 py-3">
+      <div className="primary-80 py-2.5 border-b-2 mb-2">
         <div className="flex justify-around">
           <div>
             <Link to="/products">Products</Link>
           </div>
           <div>
-            {authState.isLoggedIn && (
-              <Link to="/login" className="logout-btn" onClick={onLogout}>
+            {authState.isLoggedIn ? (
+              <Link
+                to="/login"
+                className="logout-btn py-2 px-2.5"
+                onClick={onLogout}
+              >
                 Logout
+              </Link>
+            ) : (
+              <Link to="/login" className="logout-btn py-2 px-2.5">
+                Login
               </Link>
             )}
           </div>

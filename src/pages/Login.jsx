@@ -86,7 +86,7 @@ const Login = () => {
                   <Link to="/forgot-password" className="link-color">
                     Forgot Your Password?
                   </Link>
-                  <button className="btn login-btn mt-3">Log In</button>
+                  <button className="btn login-btn mt-3 py-2">Log In</button>
                   <p className="text-center mt-3">Or</p>
                   <div className="flex items-center justify-center gap-4">
                     <img src={apple} className="icon" alt="apple" />

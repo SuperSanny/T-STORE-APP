@@ -3,15 +3,20 @@ import { BsGithub, BsInstagram, BsLinkedin, BsYoutube } from "react-icons/bs";
 const Footer = () => {
   return (
     <>
-      <footer className="py-4">
+      <footer className="py-4 w-full">
         <div className="container">
-          <div>
-            <h1 className="text-left text-xl">T-STORE</h1>
+          <div className="ms-5">
+            <h1 className="text-left text-2xl font-bold">T-STORE</h1>
           </div>
-          <div className="flex">
+        </div>
+        <div className="container mx-auto mt-3">
+          <div className="flex flex-wrap gap-6 justify-around">
+            {/* Customer Service */}
             <div className="grid-cols-3">
-              <h4 className="mb-2">CUSTOMER SERVICE</h4>
-              <div className="footer-link flex flex-col">
+              <h4 className="mb-2 font-semibold border-b-2 border-white-500 inline-block">
+                CUSTOMER SERVICE
+              </h4>
+              <div className="footer-link flex flex-col gap-1.5">
                 <Link to="/ContactUs" className="">
                   Contact Us
                 </Link>
@@ -26,9 +31,13 @@ const Footer = () => {
                 </Link>
               </div>
             </div>
+
+            {/* Company */}
             <div className="grid-cols-3">
-              <h4 className="mb-2">COMPANY</h4>
-              <div className="footer-link flex flex-col">
+              <h4 className="mb-2 font-semibold border-b-2 border-white-500 inline-block">
+                COMPANY
+              </h4>
+              <div className="footer-link flex flex-col gap-1.5">
                 <Link to="/AboutUs" className="">
                   About Us
                 </Link>
@@ -46,9 +55,13 @@ const Footer = () => {
                 </Link>
               </div>
             </div>
+
+            {/* Connect with Us */}
             <div className="grid-cols-3">
-              <h4 className="mb-2">CONNECT WITH US</h4>
-              <div className="footer-link flex flex-col">
+              <h4 className="mb-2 font-semibold border-b-2 border-white-500 inline-block">
+                CONNECT WITH US
+              </h4>
+              <div className="footer-link flex flex-col gap-1.5">
                 <Link to="/facebookLike" className="">
                   4.7M People Like this
                 </Link>
@@ -71,19 +84,23 @@ const Footer = () => {
                 </div>
               </div>
             </div>
+
+            {/* Keep Up to Date */}
             <div className="grid-cols-3">
-              <h4 className="mb-2">KEEP UP TO DATE</h4>
-              <div className="footer-link flex flex-col">
-                <div className="relative w-full">
+              <h4 className="mb-2 font-semibold border-b-2 border-white-500 inline-block">
+                KEEP UP TO DATE
+              </h4>
+              <div className="footer-link flex flex-col gap-1.5">
+                <div className="relative">
                   <input
                     type="text"
-                    className="py-2 px-3 borde focus:ring focus:ring-indigo-200 focus:outline-none placeholder-gray-400"
+                    className="py-2 px-2 h-8 text-sm w-64 subscribe-input text-gray-950 placeholder-gray-400"
                     placeholder="Your Email Address"
                     aria-label="Your Email Address"
                   />
-                  <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
+                  <div className="absolute inset-y-0 right-0.5 flex items-center">
                     <button
-                      className="subscribe-btn px-2 py-2 transition duration-300 ease-in-out"
+                      className="subscribe-btn h-7 px-1 text-sm transition duration-300 ease-in-out"
                       type="button"
                     >
                       Subscribe
