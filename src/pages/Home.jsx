@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <>
-      <div className="container w-auto">
+      <div className="container mx-auto">
         <div className="mb-2">
           <h1 className="text-center text-lg font-bold mb-2">
             TRENDING CATEGORIES

@@ -1,6 +1,14 @@
 body {
   font-family: Montserrat, sans-serif;
 }
+/* ::-webkit-scrollbar {
+  width: 5px;
+} */
+
+/* ::-webkit-scrollbar-thumb {
+  background-color: transparent !important;
+  color: transparent !important;
+} */
 :root {
   --color-748C70: #748c70;
   --color-0C0C0C: #0c0c0c;
@@ -55,13 +63,16 @@ body {
   color: #272f25;
 }
 .primary-75 {
-  background-color: #343e32;
+  color: #343e32;
 }
 .bg-primary-75 {
   background-color: #343e32;
 }
 .bg-primary-80 {
   background-color: #272f25;
+}
+.bg-primary {
+  background-color: #748c70;
 }
 
 .ps {
@@ -110,6 +121,7 @@ footer {
 .subscribe-btn:hover {
   transition: 100ms;
   background-color: #343e32;
+  font-weight: 600;
   color: var(--color-FFFFFF);
 }
 .link-color {
@@ -118,6 +130,12 @@ footer {
 .link-color:hover {
   color: #343e32;
   font-weight: 500;
+}
+.subscribe-input:focus {
+  box-shadow: 0 0 0 2px #fff;
+  color: #0c0c0c;
+  border-color: transparent;
+  outline: none;
 }
 
 /* Login and Signup End */
