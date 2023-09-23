@@ -5,6 +5,7 @@ import CollapseSection from "../components/CollapseSection";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { gatAllProducts } from "../Redux/Slices/ProductSlice";
+import { useParams } from "react-router-dom";
 const collapseData = [
   {
     title: "Gender",
@@ -20,6 +21,10 @@ const collapseData = [
   },
 ];
 const Products = () => {
+  let params = useParams();
+  const id = params.id;
+  console.log(id);
+  // const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
   const productState = useSelector((state) => state.product.productList);
   useEffect(() => {
@@ -45,11 +50,11 @@ const Products = () => {
       image: productState[i].image,
     });
   }
-  console.log(productData);
+  const items = [{ label: "Home", url: "/" }, { label: "Product" }];
   return (
     <>
       <Meta title="Product" />
-      <BreadCrumb title="Products" />
+      <BreadCrumb items={items} />
       <div className="container mx-auto">
         <div className="flex gap-3 text-2xl mb-3 mt-3">
           <h1 className="font-bold">Printed T Shirts for Men</h1>
