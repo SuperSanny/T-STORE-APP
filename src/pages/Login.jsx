@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Meta from "../components/Meta";
 import CustomInput from "../components/CustomInput";
 import { Link, useNavigate } from "react-router-dom";
-
+import Navbar from "../components/Navbar";
 import apple from "../assets/images/apple.png";
 import google from "../assets/images/google.png";
 import facebook from "../assets/images/facebook.png";
@@ -50,6 +50,7 @@ const Login = () => {
   return (
     <>
       <Meta title="Login" />
+      <Navbar />
       <section className="min-h-screen">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4">

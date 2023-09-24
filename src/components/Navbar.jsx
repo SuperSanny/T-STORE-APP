@@ -6,14 +6,13 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../Redux/Slices/AuthSlice";
 
-const NavBar = () => {
+const Navbar = () => {
   // Logout function
   const dispatch = useDispatch();
   const authState = useSelector((state) => state.auth);
   function onLogout() {
     dispatch(logout());
   }
-
   // Logout function end
   // State to control dropdown visibility
   const onMouseC = () => {
@@ -177,4 +176,4 @@ const NavBar = () => {
     </div>
   );
 };
-export default NavBar;
+export default Navbar;
