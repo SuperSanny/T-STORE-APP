@@ -1,5 +1,3 @@
-import Navbar from "./Navbar";
-
 const Header = () => {
   return (
     <>
@@ -8,7 +6,6 @@ const Header = () => {
           <p className="py-2">Enjoy Free Shipping On All Orders</p>
         </div>
       </header>
-      <Navbar />
     </>
   );
 };
