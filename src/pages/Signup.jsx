@@ -11,7 +11,7 @@ import poster from "../assets/images/girl01.png";
 import { signup } from "../Redux/Slices/AuthSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-
+import Navbar from "../components/Navbar";
 const Signup = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -54,6 +54,7 @@ const Signup = () => {
   return (
     <>
       <Meta title="Sign up" />
+      <Navbar />
       <section className="min-h-screen">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4">

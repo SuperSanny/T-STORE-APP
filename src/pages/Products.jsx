@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { gatAllProducts } from "../Redux/Slices/ProductSlice";
 import { useParams } from "react-router-dom";
+import Navbar from "../components/Navbar";
+
 const collapseData = [
   {
     title: "Gender",
@@ -54,6 +56,7 @@ const Products = () => {
   return (
     <>
       <Meta title="Product" />
+      <Navbar />
       <BreadCrumb items={items} />
       <div className="container mx-auto">
         <div className="flex gap-3 text-2xl mb-3 mt-3">
