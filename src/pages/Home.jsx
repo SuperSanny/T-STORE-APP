@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import NavBar from "../components/NavBar";
+import Navbar from "../components/Navbar";
 const Home = () => {
   return (
     <>
-      <NavBar />
+      <Navbar />
       <div className="container mx-auto">
         <div className="mb-2">
           <h1 className="text-center text-lg font-bold mb-2">

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Meta from "../components/Meta";
 import CustomInput from "../components/CustomInput";
 import { Link, useNavigate } from "react-router-dom";
-
 import apple from "../assets/images/apple.png";
 import google from "../assets/images/google.png";
 import facebook from "../assets/images/facebook.png";
