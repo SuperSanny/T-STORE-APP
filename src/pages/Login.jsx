@@ -10,6 +10,7 @@ import poster from "../assets/images/girl01.png";
 import { useDispatch, useSelector } from "react-redux";
 
 import { login } from "../Redux/Slices/AuthSlice";
+import NavBar from "../components/NavBar";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -50,6 +51,7 @@ const Login = () => {
   return (
     <>
       <Meta title="Login" />
+      <NavBar />
       <section className="min-h-screen">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4">

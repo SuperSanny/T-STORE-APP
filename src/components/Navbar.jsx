@@ -87,7 +87,7 @@ const NavBar = () => {
                 <span></span>
               )}
               {authState.isLoggedIn ? (
-                <ul className="" aria-labelledby="user-menu-button">
+                <ul className="bg-white" aria-labelledby="user-menu-button">
                   <li>
                     <Link
                       to="/user-account"
@@ -139,12 +139,12 @@ const NavBar = () => {
           </div>
         </div>
         <div
-          className={`items-center justify-between w-full md:flex md:w-auto md:order-1 z-50 ${
+          className={`items-center justify-between w-full md:flex md:w-auto md:order-1 z-1 ${
             isNavOpen ? "block" : "hidden"
           }`}
           id="navbar-user"
         >
-          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border primary-80 border-green-800 md:flex-row md:space-x-8 md:mt-0 md:border-0">
+          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 bg-white border primary-80 border-green-800 md:flex-row md:space-x-8 md:mt-0 md:border-0">
             <li>
               <Link
                 to="/"

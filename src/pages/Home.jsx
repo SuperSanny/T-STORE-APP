@@ -9,7 +9,7 @@ const Home = () => {
           <h1 className="text-center text-lg font-bold mb-2">
             TRENDING CATEGORIES
           </h1>
-          <div className="flex">
+          <div className="flex justify-center">
             <Link to="#">
               <img
                 src="https://images.bewakoof.com/uploads/grid/app/DOTW-Split-banner-Desktop-Men-1695095464.jpg"
@@ -28,7 +28,7 @@ const Home = () => {
           <h1 className="text-center text-lg font-bold mb-2">
             TRENDING CATEGORIES
           </h1>
-          <div className="flex flex-col">
+          <div className="flex flex-wrap justify-center">
             <div className="flex gap-5">
               <div>
                 <Link to="#">
@@ -44,24 +44,6 @@ const Home = () => {
                   <img
                     src="https://images.bewakoof.com/uploads/grid/app/category-box-oversized-tees-m-1685086219.jpg"
                     alt="Oversize T-Shirt"
-                  />
-                  <h3 className="text-center text-md font-semibold mt-2"></h3>
-                </Link>
-              </div>
-              <div>
-                <Link to="#">
-                  <img
-                    src="https://images.bewakoof.com/uploads/grid/app/category-box-new-240x350-men-shorts-1686063035.jpg"
-                    alt="Shorts"
-                  />
-                  <h3 className="text-center text-md font-semibold mt-2"></h3>
-                </Link>
-              </div>
-              <div>
-                <Link to="#">
-                  <img
-                    src="https://images.bewakoof.com/uploads/grid/app/category-box-joggers-m-1684997505.jpg"
-                    alt="Joggers"
                   />
                   <h3 className="text-center text-md font-semibold mt-2"></h3>
                 </Link>
@@ -100,24 +82,6 @@ const Home = () => {
                   <img
                     src="https://images.bewakoof.com/uploads/grid/app/category-box-Oversized-tshirts-Women-1682055634.png"
                     alt="Oversize T-Shirt"
-                  />
-                  <h3 className="text-center text-md font-semibold mt-2"></h3>
-                </Link>
-              </div>
-              <div>
-                <Link to="#">
-                  <img
-                    src="https://images.bewakoof.com/uploads/grid/app/category-box-new-D-240x350-fashion-tops-1686305660.jpg"
-                    alt="Shorts"
-                  />
-                  <h3 className="text-center text-md font-semibold mt-2"></h3>
-                </Link>
-              </div>
-              <div>
-                <Link to="#">
-                  <img
-                    src="https://images.bewakoof.com/uploads/grid/app/category-box-Joggers-Women-1682055633.png"
-                    alt="Joggers"
                   />
                   <h3 className="text-center text-md font-semibold mt-2"></h3>
                 </Link>

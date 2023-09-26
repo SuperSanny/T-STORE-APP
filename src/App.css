@@ -132,10 +132,32 @@ footer {
   font-weight: 500;
 }
 .subscribe-input:focus {
-  box-shadow: 0 0 0 2px #fff;
+  /* box-shadow: 0 0 0 2px #fff; */
   color: #0c0c0c;
   border-color: transparent;
   outline: none;
 }
 
 /* Login and Signup End */
+
+/* insta-link */
+.insta-link .insta {
+  /* background: #fcfcfc; */
+  background: transparent;
+  mix-blend-mode: screen;
+  display: block;
+  width: 43.75px;
+}
+.insta:hover {
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  border-radius: 9px;
+}
+
+/* insta-link End */
