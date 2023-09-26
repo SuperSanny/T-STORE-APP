@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../Redux/Slices/AuthSlice";
 
-const Navbar = () => {
+const NavBar = () => {
   // Logout function
   const dispatch = useDispatch();
   const authState = useSelector((state) => state.auth);
@@ -176,4 +176,4 @@ const Navbar = () => {
     </div>
   );
 };
-export default Navbar;
+export default NavBar;

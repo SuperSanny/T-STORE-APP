@@ -37,7 +37,6 @@ const ProductOrder = () => {
     ];
     return (
       <>
-        <NavBar />
         <Meta title="Product Order" />
         <NavBar />
         <BreadCrumb items={items} />
