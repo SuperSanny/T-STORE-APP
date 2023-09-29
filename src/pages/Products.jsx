@@ -4,7 +4,10 @@ import ProductCard from "../components/ProductCard";
 import CollapseSection from "../components/CollapseSection";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { gatAllProducts } from "../Redux/Slices/ProductSlice";
+import {
+  gatAllProducts,
+  gatAllProductsWithCategory,
+} from "../Redux/Slices/ProductSlice";
 import { useParams } from "react-router-dom";
 import NavBar from "../components/NavBar";
 const collapseData = [
@@ -24,19 +27,26 @@ const collapseData = [
 const Products = () => {
   let params = useParams();
   const id = params.id;
-  console.log(id);
   // const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
   const productState = useSelector((state) => state.product.productList);
   useEffect(() => {
     dispatch(gatAllProducts())
       .then(() => {
-        console.log("Products fetched successfully"); // Log success
+        // console.log("Products fetched successfully"); // Log success
       })
       .catch((error) => {
         console.error("Error fetching products:", error);
       });
-  }, [dispatch]);
+    const categoryId = id;
+    dispatch(gatAllProductsWithCategory(categoryId))
+      .then(() => {
+        // console.log("Products With Category fetched successfully"); // Log success
+      })
+      .catch((error) => {
+        console.error("Error fetching products:", error);
+      });
+  }, [dispatch, id]);
   const productData = [];
   for (let i = 0; i < productState.length; i++) {
     productData.push({
@@ -47,10 +57,13 @@ const Products = () => {
       description: productState[i].description,
       color: productState[i].color,
       price: `${productState[i].price}`,
+      original_price: productState[i].original_price,
+      discount: productState[i].discount,
       size: productState[i].size,
       image: productState[i].image,
     });
   }
+  // console.log(productData);
   const items = [{ label: "Home", url: "/" }, { label: "Product" }];
   return (
     <>
@@ -96,10 +109,13 @@ const Products = () => {
                 <ProductCard
                   key={product.key}
                   id={product.id}
+                  slug={product.slug}
                   title={product.title}
                   brand={product.brand}
                   description={product.description}
                   price={product.price}
+                  original_price={product.original_price}
+                  discount={product.discount}
                   color={product.color}
                 />
               ))}

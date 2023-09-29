@@ -6,11 +6,14 @@ import Colors from "./Colors";
 import heartWhite from "../assets/images/heartWhite.png";
 // import heartRed from "../assets/images/heartRed.png";
 const ProductCard = (props) => {
-  const { id, brand, title, price, color } = props;
+  const { id, slug, brand, title, price, original_price, discount, color } =
+    props;
   return (
     <>
-      <div className="product-card w-64 mb-5">
-        <Link to={id} className="relative">
+      <div className="product-card w-64 shadow-lg py-2 px-2 pb-3">
+        <input type="hidden" value={slug} />
+        <input type="hidden" value={discount} />
+        <Link to={`p/${id}`} className="relative">
           <div className="wishlist-icon absolute top-2 right-2">
             <button className="border-0 bg-transparent">
               <img src={heartWhite} className="w-6 h-6" alt="whishlist" />
@@ -44,7 +47,9 @@ const ProductCard = (props) => {
               <div className="flex items-center">
                 <p className="text-gray-900 text-xs">₹</p>
                 <p className="text-gray-900 text-lg font-semibold">{price}</p>
-                <p className="ms-2 text-gray-400 text-xs line-through">₹1699</p>
+                <p className="ms-2 text-gray-400 text-xs line-through">
+                  ₹{original_price}
+                </p>
               </div>
             </div>
           </div>

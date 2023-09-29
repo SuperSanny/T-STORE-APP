@@ -23,20 +23,41 @@ export const gatAllProducts = createAsyncThunk(
     }
   }
 );
+export const gatAllProductsWithCategory = createAsyncThunk(
+  "product/gatAllProductsWithCategory",
+  async (id, thunkAPI) => {
+    try {
+      const response = await axiosInstance.get("/tshirt/category/" + id);
+      return response?.data?.tshirts;
+    } catch (err) {
+      // toast.error("Something went wrong. Can not Load Products");
+      return thunkAPI.rejectWithValue(err);
+    }
+  }
+);
 
 const productSlice = createSlice({
   name: "product",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(gatAllProducts.fulfilled, (state, action) => {
-      if (action.payload) {
-        state.productList = action.payload;
-      } else {
-        state.productList = []; // Set a default value or empty array
-      }
-      // console.log("Product data received and updated:", state.productList);
-    });
+    builder
+      .addCase(gatAllProducts.fulfilled, (state, action) => {
+        if (action.payload) {
+          state.productList = action.payload;
+        } else {
+          state.productList = []; // Set a default value or empty array
+        }
+        // console.log("Product data received and updated:", state.productList);
+      })
+      .addCase(gatAllProductsWithCategory.fulfilled, (state, action) => {
+        if (action.payload) {
+          state.productList = action.payload;
+        } else {
+          state.productList = []; // Set a default value or empty array
+        }
+        // console.log("Product data received and updated:", state.productList);
+      });
   },
 });
 export default productSlice.reducer;

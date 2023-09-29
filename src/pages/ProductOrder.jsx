@@ -77,10 +77,10 @@ const ProductOrder = () => {
                           {product.price}
                         </p>
                         <p className="ms-1 text-gray-500 text-sm line-through">
-                          {product.price * 2}
+                          ₹{product.original_price}
                         </p>
                         <h2 className="ms-2 text-lg text-green-500 font-medium">
-                          50% OFF
+                          {product.discount}% OFF
                         </h2>
                       </div>
                     </div>

@@ -74,9 +74,11 @@ const Cart = () => {
                   </div>
                   <div className="py-2 px-4">
                     <div className="w-full mb-2">
-                      <button className="py-2 w-full font-semibold text-center bg-primary hover:bg-green-950 hover:text-white">
-                        Proceed to Buy
-                      </button>
+                      <Link to="/information">
+                        <button className="py-2 w-full font-semibold text-center bg-primary hover:bg-green-950 hover:text-white">
+                          Proceed to Buy
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

@@ -25,14 +25,7 @@ const Wishlist = () => {
       </section>
       <section className="container mx-auto py-3 px-4">
         <div className="flex flex-wrap gap-5 justify-center">
-          <div className="flex flex-col shadow py-2 px-2 relative">
-            <ProductCard />
-            <button className="bg-primary-80 text-white absolute top-1 right-1  ">
-              <RxCross2 className="hover:scale-110 text-2xl" />
-            </button>
-            <button className="btn login-btn py-2">Add to cart</button>
-          </div>
-          <div className="flex flex-col shadow py-2 px-2 relative">
+          <div className="flex flex-col relative">
             <ProductCard />
             <button className="bg-primary-80 text-white absolute top-1 right-1  ">
               <RxCross2 className="hover:scale-110 text-2xl" />

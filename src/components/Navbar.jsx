@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa6";
-import { AiOutlineHeart, AiOutlineShopping } from "react-icons/ai";
+import {
+  AiOutlineHeart,
+  AiOutlineShopping,
+  AiOutlineSearch,
+  AiOutlineClose,
+} from "react-icons/ai";
 import userImg from "../assets/images/user.png";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,10 +24,22 @@ const NavBar = () => {
     const dropdown = document.getElementById("user-dropdown");
     dropdown.classList.toggle("hidden");
   };
+  // searchbox
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const onMouseSearchClick = () => {
+    setIsSearchOpen(!isSearchOpen);
+  };
+  // searchbox end
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
+  };
+
+  const [query, setQuery] = useState("");
+
+  const handleInputChange = (e) => {
+    setQuery(e.target.value);
   };
   return (
     <div className="primary-80 border-b-2 mb-2">
@@ -53,12 +70,53 @@ const NavBar = () => {
         </div>
         <div className="flex items-center gap-2 md:order-2">
           <div className="flex gap-2 items-center">
-            <Link to="/wishlist">
-              <AiOutlineHeart className="text-2xl" />
-            </Link>
-            <Link to="/cart">
-              <AiOutlineShopping className="text-2xl" />
-            </Link>
+            <div className="relative">
+              <button type="button" onClick={onMouseSearchClick}>
+                {isSearchOpen ? (
+                  <AiOutlineClose className="text-2xl mt-2" />
+                ) : (
+                  <AiOutlineSearch className="text-2xl mt-2" />
+                )}
+                {/* <AiOutlineSearch className="text-2xl mt-2" /> */}
+              </button>
+              <div
+                className={`${
+                  isSearchOpen ? "block" : "hidden"
+                } absolute right-0 mt-3 bg-white primary-80 border border-green-800 shadow w-max mx-auto`}
+                id="search-dropdown"
+              >
+                <div className="py-5 px-5 ">
+                  <div className="border-b-2 border-green-800 flex items-center">
+                    <AiOutlineSearch className="text-gray-400 mr-2 text-2xl" />
+                    <input
+                      type="text"
+                      placeholder="Search..."
+                      value={query}
+                      onChange={handleInputChange}
+                      className="w-full py-2 focus:outline-none focus:border-green-800"
+                    />
+                    {query && (
+                      <button
+                        onClick={() => setQuery("")} // Clear the input field
+                        className="text-gray-400 ml-2 focus:outline-none"
+                      >
+                        <AiOutlineClose className="text-2xl" />
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <Link to="/wishlist">
+                <AiOutlineHeart className="text-2xl" />
+              </Link>
+            </div>
+            <div>
+              <Link to="/cart">
+                <AiOutlineShopping className="text-2xl" />
+              </Link>
+            </div>
           </div>
           <div className="relative">
             <button
@@ -147,7 +205,7 @@ const NavBar = () => {
             <li>
               <Link
                 to="/"
-                className="block py-2 pl-3 pr-4 hover:bg-green-950 hover:text-white"
+                className="block py-2 md:text-center pl-5 md:pl-0 w-36 hover:bg-green-950 hover:text-white"
                 aria-current="page"
               >
                 Home
@@ -155,8 +213,8 @@ const NavBar = () => {
             </li>
             <li>
               <Link
-                to="/products"
-                className="block py-2 pl-3 pr-4 hover:bg-green-950 hover:text-white"
+                to="/650a7be17575e3b87f3f1d03"
+                className="block py-2 md:text-center pl-5 md:pl-0 w-36 hover:bg-green-950 hover:text-white"
               >
                 Men
               </Link>
@@ -164,10 +222,19 @@ const NavBar = () => {
             <li>
               <Link
                 key={5}
-                to="/products"
-                className="block py-2 pl-3 pr-4 hover:bg-green-950 hover:text-white"
+                to="/650a7bf77575e3b87f3f1d05"
+                className="block py-2 md:text-center pl-5 md:pl-0 w-36 hover:bg-green-950 hover:text-white"
               >
                 Women
+              </Link>
+            </li>
+            <li>
+              <Link
+                key={5}
+                to="/categories"
+                className="block py-2 md:text-center pl-5 md:pl-0 w-36 hover:bg-green-950 hover:text-white"
+              >
+                Categories
               </Link>
             </li>
           </ul>

@@ -10,7 +10,7 @@ const CartItem = () => {
   };
   return (
     <>
-      <div className="mx-auto w-auto primary-75">
+      <div className="mx-auto w-auto primary-75 py-2">
         <div className="flex justify-between shadow relative">
           <div className="absolute inset-y-2/4 right-1 ">
             <button className="bg-primary-80 text-white ">
