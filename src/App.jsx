@@ -1,5 +1,5 @@
 // import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Homelayout from "./layouts/Homelayout";
 import Login from "./pages/Login";
@@ -13,6 +13,8 @@ import Categories from "./pages/Categories";
 import Information from "./pages/Information";
 import Shipping from "./pages/Shipping";
 import Payment from "./pages/Payment";
+import NotFound from "./pages/NotFound";
+import InternalServer from "./pages/InternalServer";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -37,6 +39,8 @@ function App() {
             <Route path="information" element={<Information />} />
             <Route path="shipping" element={<Shipping />} />
             <Route path="payment" element={<Payment />} />
+            <Route path="/500" element={<InternalServer />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>

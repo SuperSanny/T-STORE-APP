@@ -23,11 +23,11 @@ const Footer = () => {
                 </Link>
                 <div className="flex flex-col gap-3">
                   <div>
-                    <h2 className="text-3xl font-bold">
+                    <h2 className="text-3xl font-bold text-center">
                       Join the T-STORE Revolution!
                     </h2>
                   </div>
-                  <div className="footer-link flex flex-col gap-1.5">
+                  <div className="footer-link px-5 flex flex-col gap-1.5">
                     <div className="relative">
                       <input
                         type="text"

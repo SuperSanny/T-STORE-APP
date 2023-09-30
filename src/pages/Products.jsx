@@ -64,13 +64,16 @@ const Products = () => {
     });
   }
   // console.log(productData);
-  const items = [{ label: "Home", url: "/" }, { label: "Product" }];
+  const items = [
+    { label: "Home", url: "/" },
+    { label: "Product", bold: true },
+  ];
   return (
     <>
       <Meta title="Product" />
       <NavBar />
       <BreadCrumb items={items} />
-      <div className="container mx-auto">
+      <div className="container mx-auto px-5 py-5">
         <div className="flex gap-3 text-2xl mb-3 mt-3">
           <h1 className="font-bold">Printed T Shirts for Men</h1>
           <h1 className="text-gray-400">({productData.length})</h1>

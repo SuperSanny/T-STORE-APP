@@ -120,7 +120,7 @@ footer {
 .logout-btn:hover,
 .subscribe-btn:hover {
   transition: 100ms;
-  background-color: #343e32;
+  background-color: #272f25;
   font-weight: 600;
   color: var(--color-FFFFFF);
 }

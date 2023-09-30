@@ -40,7 +40,7 @@ const ProductOrder = () => {
         <Meta title="Product Order" />
         <NavBar />
         <BreadCrumb items={items} />
-        <section className="container mx-auto ">
+        <section className="container mx-auto px-5 py-5">
           <div className="sm:grid sm:grid-cols-1 lg:grid-cols-6 xl:grid-cols-6 2xl:grid-cols-6 gap-5">
             <div className="sm:col-span-1 lg:col-span-1 xl:col-span-1 2xl:col-span-1"></div>
             <div className="sm:col-span-1 lg:col-span-2 xl:col-span-2 2xl:col-span-2">
