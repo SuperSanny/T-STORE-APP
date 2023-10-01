@@ -10,6 +10,9 @@ import userImg from "../assets/images/user.png";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../Redux/Slices/AuthSlice";
+import { gatAllCategory } from "../Redux/Slices/CategorySlice";
+import { useEffect } from "react";
+import { FiChevronDown } from "react-icons/fi";
 
 const NavBar = () => {
   // Logout function
@@ -19,6 +22,35 @@ const NavBar = () => {
     dispatch(logout());
   }
   // Logout function end
+  // Categoty function Start
+  const categoryState = useSelector((state) => state.category.categoryList);
+  useEffect(() => {
+    dispatch(gatAllCategory())
+      .then(() => {
+        console.log("Category fetched successfully"); // Log success
+      })
+      .catch((error) => {
+        console.error("Error fetching categories:", error);
+      });
+  }, [dispatch]);
+  const categoryData = [];
+  for (let i = 0; i < categoryState.length; i++) {
+    categoryData.push({
+      key: i + 1,
+      id: categoryState[i]._id,
+      name: categoryState[i].name,
+    });
+  }
+  const onMouseE = () => {
+    const dropdown = document.getElementById("dropdownHover");
+    dropdown.classList.toggle("hidden");
+  };
+  const onMouseL = () => {
+    const dropdown = document.getElementById("dropdownHover");
+    dropdown.classList.toggle("hidden");
+  };
+  // Category Function End
+
   // State to control dropdown visibility
   const onMouseC = () => {
     const dropdown = document.getElementById("user-dropdown");
@@ -229,13 +261,36 @@ const NavBar = () => {
               </Link>
             </li>
             <li>
-              <Link
-                key={5}
-                to="/categories"
-                className="block py-2 md:text-center pl-5 md:pl-0 w-36 hover:bg-green-950 hover:text-white"
-              >
-                Categories
-              </Link>
+              <div className="pl-5 md:pl-0 w-36 mt-2">
+                <div className="relative">
+                  <button
+                    id="dropdownHoverButton"
+                    onMouseOver={onMouseE}
+                    onMouseLeave={onMouseL}
+                    className="link-color flex gap-1 items-center"
+                    type="button"
+                  >
+                    Category <FiChevronDown />
+                  </button>
+                  <div
+                    id="dropdownHover"
+                    className="z-10 p-1 hidden absolute bg-white min-w-max border border-green-800 shadow"
+                  >
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2">
+                      {categoryData.map((list) => (
+                        <li key={list.id} className="w-48">
+                          <Link
+                            to={`p/${list.id}`}
+                            className="block px-2 py-2 text-sm hover:bg-green-950 hover:text-white truncate"
+                          >
+                            {list.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </li>
           </ul>
         </div>

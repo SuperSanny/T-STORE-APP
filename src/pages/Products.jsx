@@ -26,6 +26,7 @@ const collapseData = [
 ];
 const Products = () => {
   let params = useParams();
+  // const navigate = useNavigate();
   const id = params.id;
   // const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
