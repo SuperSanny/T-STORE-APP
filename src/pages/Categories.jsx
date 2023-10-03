@@ -1,6 +1,5 @@
 import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
-import NavBar from "../components/NavBar";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { gatAllCategory } from "../Redux/Slices/CategorySlice";
@@ -30,7 +29,6 @@ const Categories = () => {
   return (
     <>
       <Meta title="Product" />
-      <NavBar />
       <BreadCrumb items={items} />
       <section className="container mx-auto w-10/12">
         <div className="py-3">
