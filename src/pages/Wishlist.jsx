@@ -1,5 +1,4 @@
 import Meta from "../components/Meta";
-import NavBar from "../components/NavBar";
 import ProductCard from "../components/ProductCard";
 import { RxCross2 } from "react-icons/rx";
 import { useSelector } from "react-redux";
@@ -9,7 +8,6 @@ const Wishlist = () => {
   return (
     <>
       <Meta title="Wishlist" />
-      <NavBar />
       <section className="container mx-auto py-1 px-4">
         <div className="flex flex-col items-center justify-center">
           <div>

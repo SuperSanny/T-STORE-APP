@@ -9,7 +9,6 @@ import {
   gatAllProductsWithCategory,
 } from "../Redux/Slices/ProductSlice";
 import { useParams } from "react-router-dom";
-import NavBar from "../components/NavBar";
 const collapseData = [
   {
     title: "Gender",
@@ -72,7 +71,6 @@ const Products = () => {
   return (
     <>
       <Meta title="Product" />
-      <NavBar />
       <BreadCrumb items={items} />
       <div className="container mx-auto px-5 py-5">
         <div className="flex gap-3 text-2xl mb-3 mt-3">

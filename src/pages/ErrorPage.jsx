@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+/* eslint-disable react/prop-types */
 import Meta from "../components/Meta";
-import ErrorPage from "../assets/images/404 error lost in space.gif";
-const NotFound = () => {
+import { Link } from "react-router-dom";
+const ErrorPage = (props) => {
+  const { message, imgLink } = props;
   return (
     <>
-      <Meta title="404 Not Found" />
+      <Meta title={message} />
       <section className="container mx-auto px-4">
         <div className="py-3">
           <Link to="/" className="flex items-center">
@@ -22,7 +23,7 @@ const NotFound = () => {
         </div>
         <div className="px-5 py-5">
           <div className="flex items-center justify-center ">
-            <img src={ErrorPage} alt="Page Not Found" />
+            <img src={imgLink} alt="Error Page" />
           </div>
         </div>
       </section>
@@ -30,4 +31,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default ErrorPage;

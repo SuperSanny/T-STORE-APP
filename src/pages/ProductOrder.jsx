@@ -7,7 +7,6 @@ import { SlLocationPin } from "react-icons/sl";
 import { useEffect, useState } from "react";
 import axiosInstance from "../config/axiosInstance";
 import { MdOutlineDescription } from "react-icons/md";
-import NavBar from "../components/NavBar";
 const ProductOrder = () => {
   let params = useParams();
   const id = params.id;
@@ -38,7 +37,6 @@ const ProductOrder = () => {
     return (
       <>
         <Meta title="Product Order" />
-        <NavBar />
         <BreadCrumb items={items} />
         <section className="container mx-auto px-5 py-5">
           <div className="sm:grid sm:grid-cols-1 lg:grid-cols-6 xl:grid-cols-6 2xl:grid-cols-6 gap-5">

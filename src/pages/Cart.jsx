@@ -7,8 +7,8 @@ const Cart = () => {
   return (
     <>
       <Meta title="Cart" />
-      <section className="container mx-auto px-4">
-        <div className="py-3">
+      <section className="container mx-auto py-4 px-4">
+        {/* <div className="py-3">
           <Link to="/" className="flex items-center">
             <lord-icon
               src="https://cdn.lordicon.com/kecapeqm.json"
@@ -21,7 +21,7 @@ const Cart = () => {
               T-STORE
             </span>
           </Link>
-        </div>
+        </div> */}
         {authState.isLoggedIn ? (
           <div className="flex mt-4 mb-4 items-center justify-between">
             <div className="flex gap-10 items-center">

@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #272f25;
+  -webkit-mask: radial-gradient(
+    circle closest-side at 50% 40%,
+    #0000 94%,
+    #000
+  );
+  transform-origin: 50% 40%;
+  animation: spinner-pl92zb 1s infinite linear;
+}
+
+@keyframes spinner-pl92zb {
+  100% {
+    transform: rotate(1turn);
+  }
+}
