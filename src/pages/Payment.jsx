@@ -2,7 +2,7 @@ import { useState } from "react";
 import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
 import { Link } from "react-router-dom";
-import NewCustomInput from "../components/NewCustomInput";
+import NewCustomInput from "../components/CustomInput/NewCustomInput";
 import { MdEmail } from "react-icons/md";
 import { FiAlertCircle } from "react-icons/fi";
 import cardicon from "../assets/images/card.png";

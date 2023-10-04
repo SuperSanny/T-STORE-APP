@@ -110,10 +110,10 @@ const NavBar = () => {
                 <div
                   className={`${
                     isSearchOpen ? "block" : "hidden"
-                  } absolute right-0 mt-3 bg-white primary-80 border border-green-800 shadow w-max mx-auto`}
+                  } absolute right-0 mt-3 primary-80 border border-green-800 shadow w-max mx-auto`}
                   id="search-dropdown"
                 >
-                  <div className="py-5 px-5 ">
+                  <div className="py-2 px-5 bg-white">
                     <div className="border-b-2 border-green-800 flex items-center">
                       <AiOutlineSearch className="text-gray-400 mr-2 text-2xl" />
                       <input

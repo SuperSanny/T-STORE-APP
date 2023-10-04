@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { BsInstagram, BsLinkedin, BsYoutube } from "react-icons/bs";
 import { FaXTwitter } from "react-icons/fa6";
+import { useState } from "react";
 const Footer = () => {
+  const [emailValue, setEmailValue] = useState("");
   return (
     <>
       <footer className="bg-primary-80 py-2">
@@ -34,6 +36,8 @@ const Footer = () => {
                         className="py-3 px-2 text-base font-medium w-full subscribe-input text-gray-950 placeholder-gray-400"
                         placeholder="Your Email Address"
                         aria-label="Your Email Address"
+                        value={emailValue}
+                        onChange={(e) => setEmailValue(e.target.value)}
                       />
                       <div className="absolute inset-y-0 right-1 flex items-center">
                         <button

@@ -1,7 +1,18 @@
 import { Link } from "react-router-dom";
+import ImgSlider from "../components/Slider/ImgSlider";
+import EffectCard from "../components/Slider/EffectCard";
+import ImgLoopSlider from "../components/Slider/ImgLoopSlider";
+
 const Home = () => {
   return (
     <>
+      <div className="my-2">
+        <ImgLoopSlider
+          link="#"
+          src="https://images.bewakoof.com/uploads/grid/app/1X1-b3at999--1--1695995766.jpg"
+          alt=""
+        />
+      </div>
       <div className="container mx-auto">
         <div className="mb-2">
           <h1 className="text-center text-lg font-bold mb-2">
@@ -104,6 +115,29 @@ const Home = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div>
+        <h1 className="text-center text-lg font-bold mb-2">BESTSELLERS</h1>
+        <ImgSlider
+          link="#"
+          src="https://images.bewakoof.com/uploads/grid/app/category-box-new-240x350-men-fullsleeve-1686063034.jpg"
+          alt=""
+        />
+      </div>
+
+      <div className="flex flex-wrap items-start justify-center gap-2 md:gap-20 px-5 py-5">
+        <EffectCard
+          link="#"
+          src="https://images.bewakoof.com/uploads/grid/app/category-box-new-240x350-men-fullsleeve-1686063034.jpg"
+          alt=""
+        />
+        <div className="flex flex-col gap-2">
+          <h1 className="text-4xl font-semibold">This is Product Slider.</h1>
+          <p className="text-xl font-medium text-gray-500">
+            Here, You can select product by sliding (left to right) or (right to
+            left)
+          </p>
         </div>
       </div>
     </>

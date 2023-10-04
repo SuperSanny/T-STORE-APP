@@ -104,11 +104,11 @@ const Payments = () => {
                         </div>
                       </div>
                     </div>
-                    <button className="primary-80 absolute top-3 right-3">
+                    <div className="primary-80 absolute top-3 right-3">
                       <button onClick={closeModal}>
                         <RxCross2 className="hover:scale-125 text-2xl" />
                       </button>
-                    </button>
+                    </div>
                   </div>
                 </div>
               )}
