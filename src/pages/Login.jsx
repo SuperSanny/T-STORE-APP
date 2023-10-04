@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Meta from "../components/Meta";
-import CustomInput from "../components/CustomInput";
+import CustomInput from "../components/CustomInput/CustomInput";
 import { Link, useNavigate } from "react-router-dom";
 import apple from "../assets/images/apple.png";
 import google from "../assets/images/google.png";
@@ -9,8 +9,19 @@ import poster from "../assets/images/girl01.png";
 import { useDispatch, useSelector } from "react-redux";
 
 import { login } from "../Redux/Slices/AuthSlice";
+import CustomModal from "../components/CustomModal";
+import LabelCustomInput from "../components/CustomInput/LabelCustomInput";
 
 const Login = () => {
+  const [emailValue, setEmailValue] = useState("");
+  const [isForgotPasswordModalOpen, setIsForgotPasswordModalOpen] =
+    useState(false);
+  const openForgotPasswordModal = () => {
+    setIsForgotPasswordModalOpen(true);
+  };
+  const closeForgotPasswordModal = () => {
+    setIsForgotPasswordModalOpen(false);
+  };
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const state = useSelector((state) => state.auth);
@@ -83,9 +94,40 @@ const Login = () => {
                       onChange={handleFormChange}
                       value={loginDetails.password}
                     />
-                    <Link to="/forgot-password" className="link-color">
+                    <Link
+                      to="#"
+                      className="link-color flex items-start w-max"
+                      onClick={openForgotPasswordModal}
+                    >
                       Forgot Your Password?
                     </Link>
+                    <CustomModal
+                      isOpen={isForgotPasswordModalOpen}
+                      className="text-center text-sm my-3 font-medium text-gray-400"
+                      closeModal={closeForgotPasswordModal}
+                      title="Please enter your Email Id to receive a reset password link"
+                      customDiv={
+                        <>
+                          <div className="flex flex-col gap-3">
+                            <LabelCustomInput
+                              type="email"
+                              label="Email"
+                              value={emailValue}
+                              onChange={(newValue) => setEmailValue(newValue)}
+                            />
+                            <button
+                              className={`w-full font-semibold mt-2 py-2 px-3 bg-gray-600 ${
+                                emailValue === ""
+                                  ? "cursor-not-allowed opacity-50"
+                                  : "login-btn"
+                              } `}
+                            >
+                              SUBMIT
+                            </button>
+                          </div>
+                        </>
+                      }
+                    />
                     <button className="btn login-btn mt-3 py-2">Log In</button>
                     <p className="text-center mt-3">Or</p>
                     <div className="flex items-center justify-center gap-4">

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Meta from "../components/Meta";
 import BreadCrumb from "../components/BreadCrumb";
-import NewCustomInput from "../components/NewCustomInput";
+import NewCustomInput from "../components/CustomInput/NewCustomInput";
 import { AiOutlineLeft } from "react-icons/ai";
 import CartItem from "../components/CartItem";
 import {

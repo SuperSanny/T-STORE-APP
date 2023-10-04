@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { AiOutlineLeft } from "react-icons/ai";
-import LabelCustomInput from "../../components/LabelCustomInput";
-import NewCustomInput from "../../components/NewCustomInput";
+import LabelCustomInput from "../../components/CustomInput/LabelCustomInput";
+import NewCustomInput from "../../components/CustomInput/NewCustomInput";
 import { useState } from "react";
 import CustomModal from "../../components/CustomModal";
 const Profile = () => {
