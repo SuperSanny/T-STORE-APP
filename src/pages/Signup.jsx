@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Meta from "../components/Meta";
-import CustomInput from "../components/CustomInput";
+import CustomInput from "../components/CustomInput/CustomInput";
 import { Link, useNavigate } from "react-router-dom";
 
 import apple from "../assets/images/apple.png";

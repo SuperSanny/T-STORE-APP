@@ -8,7 +8,7 @@ const CustomInput = (props) => {
         name={name}
         id={id}
         placeholder={placeholder}
-        className={`form-control ${className}`}
+        className={`form-control accent-[#272f25] ${className}`}
         onChange={onChange}
         value={value}
       />

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { AiOutlineLeft } from "react-icons/ai";
 import { RiAddLine } from "react-icons/ri";
-import BorderCustomInput from "../../components/BorderCustomInput";
+import BorderCustomInput from "../../components/CustomInput/BorderCustomInput";
 import { useState } from "react";
 const Address = () => {
   const [selectedTag, setSelectedTag] = useState("");
