@@ -5,16 +5,7 @@ import { Link } from "react-router-dom";
 import NewCustomInput from "../components/CustomInput/NewCustomInput";
 import { MdEmail } from "react-icons/md";
 import { FiAlertCircle } from "react-icons/fi";
-import cardicon from "../assets/images/card.png";
-import upiicon from "../assets/images/bhim-logo.png";
-import rupeesicon from "../assets/images/rupee.png";
-import visaicon from "../assets/images/visa.png";
-import mastercardicon from "../assets/images/mastercard.png";
-import rupayicon from "../assets/images/Rupay.png";
-import gpayicon from "../assets/images/gpay.png";
-import bhimicon from "../assets/images/bhim.png";
-import phonepeicon from "../assets/images/phonepe.png";
-import paytmicon from "../assets/images/paytm.png";
+import Images from "../constant/Images";
 // import cvvicon from "../assets/images/cvv.png";
 
 import {
@@ -46,9 +37,9 @@ const Payment = () => {
     setActiveTab(tabId);
   };
   const tabData = [
-    { id: "cards", label: "Debit & Credit Card", icon: cardicon },
-    { id: "upi", label: "UPI", icon: upiicon },
-    { id: "cod", label: "Cash On Delivery", icon: rupeesicon },
+    { id: "cards", label: "Debit & Credit Card", icon: Images.cardIcon },
+    { id: "upi", label: "UPI", icon: Images.upiIcon },
+    { id: "cod", label: "Cash On Delivery", icon: Images.rupeesIcon },
   ];
   //   Tab End
 
@@ -247,18 +238,26 @@ const Payment = () => {
                       {tab.id === "cards" && (
                         <div className="flex flex-col gap-3">
                           <div className="flex gap-5">
-                            <img src={visaicon} alt="" className="w-auto h-8" />
                             <img
-                              src={mastercardicon}
+                              src={Images.visaIcon}
                               alt=""
                               className="w-auto h-8"
                             />
                             <img
-                              src={rupayicon}
+                              src={Images.mastercardIcon}
                               alt=""
                               className="w-auto h-8"
                             />
-                            <img src={cardicon} alt="" className="w-auto h-8" />
+                            <img
+                              src={Images.rupayIcon}
+                              alt=""
+                              className="w-auto h-8"
+                            />
+                            <img
+                              src={Images.cardIcon}
+                              alt=""
+                              className="w-auto h-8"
+                            />
                           </div>
                           <div className="w-full md:w-1/2 mt-3">
                             <form onSubmit={handleSubmit} action="">
@@ -377,15 +376,23 @@ const Payment = () => {
                       {tab.id === "upi" && (
                         <div className="flex flex-col gap-3">
                           <div className="flex gap-5">
-                            <img src={gpayicon} alt="" className="w-auto h-8" />
                             <img
-                              src={phonepeicon}
+                              src={Images.gpayIcon}
                               alt=""
                               className="w-auto h-8"
                             />
-                            <img src={bhimicon} alt="" className="w-auto h-8" />
                             <img
-                              src={paytmicon}
+                              src={Images.phonepeIcon}
+                              alt=""
+                              className="w-auto h-8"
+                            />
+                            <img
+                              src={Images.bhimIcon}
+                              alt=""
+                              className="w-auto h-8"
+                            />
+                            <img
+                              src={Images.paytmIcon}
                               alt=""
                               className="w-auto h-8"
                             />

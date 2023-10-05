@@ -1,5 +1,5 @@
 import { useState } from "react";
-import cartitemImg from "../assets/images/cartitem.png";
+import Images from "../constant/Images";
 import { RxCross2 } from "react-icons/rx";
 import { AiOutlineCaretDown } from "react-icons/ai";
 const CartItem = () => {
@@ -19,7 +19,11 @@ const CartItem = () => {
           </div>
           <div className="flex gap-2 py-3 px-3">
             <div className="w-60">
-              <img src={cartitemImg} className="w-auto h-44" alt="cart-img" />
+              <img
+                src={Images.cartitemImg}
+                className="w-auto h-44"
+                alt="cart-img"
+              />
             </div>
             <div className="flex flex-col gap-1 ms-2 w-full">
               <div className="">

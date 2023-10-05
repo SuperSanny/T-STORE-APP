@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { AiOutlineLeft } from "react-icons/ai";
-import card from "../../assets/images/card.png";
-import upi from "../../assets/images/upi.png";
+import Images from "../../constant/Images";
 import { RiAddCircleLine } from "react-icons/ri";
 import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
@@ -42,7 +41,7 @@ const Payments = () => {
               <div className="px-5 py-5 border border-[#5a6d57]">
                 <div className="flex gap-8 justify-start items-center">
                   <img
-                    src={card}
+                    src={Images.cardIcon}
                     alt="card"
                     className="w-auto h-8 opacity-50"
                   />
@@ -57,7 +56,11 @@ const Payments = () => {
               <button onFocus={openModal}>
                 <div className="px-5 py-5 border border-[#5a6d57] flex justify-between items-center">
                   <div className="flex gap-8 justify-start items-center">
-                    <img src={upi} alt="card" className="w-auto h-10" />
+                    <img
+                      src={Images.upiIcon1}
+                      alt="card"
+                      className="w-auto h-10"
+                    />
                     <p className="text-sm font-medium primary-80">ADD UPI ID</p>
                   </div>
                   <RiAddCircleLine className="text-2xl text-[#748c70]" />
