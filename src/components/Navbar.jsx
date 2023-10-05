@@ -6,7 +6,7 @@ import {
   AiOutlineSearch,
   AiOutlineClose,
 } from "react-icons/ai";
-import userImg from "../assets/images/user.png";
+import Images from "../constant/Images";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../Redux/Slices/AuthSlice";
@@ -153,7 +153,7 @@ const NavBar = () => {
                 className="flex mr-2 h-6 w-6 rounded-full md:mr-0 "
                 id="user-menu-button"
               >
-                <img src={userImg} alt="user" />
+                <img src={Images.userImg} alt="user" />
               </button>
               {/* Dropdown menu */}
 

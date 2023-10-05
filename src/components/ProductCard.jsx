@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 // import { BsHeartFill } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";
 import Colors from "./Colors";
-import heartWhite from "../assets/images/heartWhite.png";
-// import heartRed from "../assets/images/heartRed.png";
+import Images from "../constant/Images";
 const ProductCard = (props) => {
   const { id, slug, brand, title, price, original_price, discount, color } =
     props;
@@ -16,7 +15,11 @@ const ProductCard = (props) => {
         <Link to={`p/${id}`} className="relative">
           <div className="wishlist-icon absolute top-2 right-2">
             <button className="border-0 bg-transparent">
-              <img src={heartWhite} className="w-6 h-6" alt="whishlist" />
+              <img
+                src={Images.heartWhite}
+                className="w-6 h-6"
+                alt="whishlist"
+              />
             </button>
           </div>
           <div className="product-image">

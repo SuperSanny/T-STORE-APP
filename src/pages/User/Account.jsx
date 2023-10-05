@@ -1,7 +1,7 @@
 import Meta from "../../components/Meta";
 import { Link } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa";
-import posterImg from "../../assets/images/Design inspiration.gif";
+import Images from "../../constant/Images";
 const Account = () => {
   const list = [
     {
@@ -63,7 +63,7 @@ const Account = () => {
             </Link>
           </div>
           <div className="py-5 px-5">
-            <img src={posterImg} alt="Poster" className="w-96 h-96" />
+            <img src={Images.posterImg} alt="Poster" className="w-96 h-96" />
           </div>
         </div>
       </section>

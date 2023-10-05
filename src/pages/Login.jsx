@@ -2,10 +2,7 @@ import { useEffect, useState } from "react";
 import Meta from "../components/Meta";
 import CustomInput from "../components/CustomInput/CustomInput";
 import { Link, useNavigate } from "react-router-dom";
-import apple from "../assets/images/apple.png";
-import google from "../assets/images/google.png";
-import facebook from "../assets/images/facebook.png";
-import poster from "../assets/images/girl01.png";
+import Images from "../constant/Images";
 import { useDispatch, useSelector } from "react-redux";
 
 import { login } from "../Redux/Slices/AuthSlice";
@@ -65,13 +62,13 @@ const Login = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4">
             <div className="col-span-1 md:col-span-1 xl:col-span-1">
               <div className="poster">
-                <img src={poster} alt="poster" className="w-full" />
+                <img src={Images.poster1} alt="poster" className="w-full" />
               </div>
             </div>
             <div className="py-5 px-5">
               <div className="col-span-1 md:col-span-1 xl:col-span-1">
                 <div className="login">
-                  <h3 className="text-center text-xl font-semibold">Log In</h3>
+                  <h3 className="text-center text-4xl font-semibold">Log In</h3>
                   <form
                     onSubmit={onFormSubmit}
                     className="py-3 flex flex-col gap-2"
@@ -131,10 +128,18 @@ const Login = () => {
                     <button className="btn login-btn mt-3 py-2">Log In</button>
                     <p className="text-center mt-3">Or</p>
                     <div className="flex items-center justify-center gap-4">
-                      <img src={apple} className="icon w-7 h-7" alt="apple" />
-                      <img src={google} className="icon w-7 h-7" alt="google" />
                       <img
-                        src={facebook}
+                        src={Images.appleIcon}
+                        className="icon w-7 h-7"
+                        alt="apple"
+                      />
+                      <img
+                        src={Images.googleIcon}
+                        className="icon w-7 h-7"
+                        alt="google"
+                      />
+                      <img
+                        src={Images.facebookIcon}
                         className="icon w-7 h-7"
                         alt="facebook"
                       />
