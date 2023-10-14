@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 
-const LabelCustomInput = ({ id, type, label, value, onChange }) => {
+const LabelCustomInput = ({ id, type, name, label, value, onChange }) => {
   const [inputValue, setInputValue] = useState(value);
   useEffect(() => {
     setInputValue(value);
@@ -19,6 +19,7 @@ const LabelCustomInput = ({ id, type, label, value, onChange }) => {
         <input
           type={type}
           id={id}
+          name={name}
           value={inputValue}
           onChange={handleInputChange}
           className="block py-2 px-0 w-full text-sm font-semibold priamry-80 bg-transparent border-0 border-b border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-800 peer"

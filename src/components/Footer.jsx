@@ -33,7 +33,7 @@ const Footer = () => {
                     <div className="relative">
                       <input
                         type="text"
-                        className="py-3 px-2 text-base font-medium w-full subscribe-input text-gray-950 placeholder-gray-400"
+                        className="py-3 px-2 text-base font-medium w-full subscribe-input text-gray-950 placeholder-gray-400 rounded"
                         placeholder="Your Email Address"
                         aria-label="Your Email Address"
                         value={emailValue}
@@ -41,7 +41,7 @@ const Footer = () => {
                       />
                       <div className="absolute inset-y-0 right-1 flex items-center">
                         <button
-                          className="subscribe-btn py-2.5 px-3 text-sm transition duration-300 ease-in-out"
+                          className="subscribe-btn py-2.5 px-3 text-sm transition duration-300 ease-in-out rounded"
                           type="button"
                         >
                           Subscribe
@@ -72,7 +72,7 @@ const Footer = () => {
                   <BsYoutube className="hover:text-[#C31A1E;]" />
                 </Link>
               </div>
-              <p>&copy;2023 T-STORE. All rights reserved.</p>
+              <p>&copy; 2023 T-STORE. All rights reserved.</p>
             </div>
           </div>
         </div>

@@ -46,7 +46,7 @@ const Shipping = () => {
             <div className="text-center mb-3">
               <h1 className="text-2xl primary-80 font-semibold">Your Cart</h1>
             </div>
-            <div className="">
+            <div className="flex flex-col gap-3">
               <CartItem />
               <CartItem />
             </div>
@@ -175,7 +175,7 @@ const Shipping = () => {
                 </div>
                 <div className="">
                   <Link to="/payment">
-                    <button className="btn login-btn py-2 px-3">
+                    <button className="btn login-btn py-2 px-3 rounded-md shadow-md">
                       Continue to Payment
                     </button>
                   </Link>

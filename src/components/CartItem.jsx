@@ -10,18 +10,18 @@ const CartItem = () => {
   };
   return (
     <>
-      <div className="mx-auto w-auto primary-75 py-2">
-        <div className="flex justify-between shadow relative">
-          <div className="absolute inset-y-2/4 right-1 ">
-            <button className="bg-primary-80 text-white ">
+      <div className="mx-auto w-full primary-75 bg-white bg-opacity-100 shadow-md rounded-md">
+        <div className="flex justify-between relative">
+          <div className="absolute top-1 right-1 ">
+            <button className="bg-primary-80 text-white rounded-full shadow-md p-1">
               <RxCross2 className="hover:scale-110 text-2xl" />
             </button>
           </div>
-          <div className="flex gap-2 py-3 px-3">
+          <div className="flex gap-2 py-2 px-2">
             <div className="w-60">
               <img
                 src={Images.cartitemImg}
-                className="w-auto h-44"
+                className="w-auto h-44 rounded-md"
                 alt="cart-img"
               />
             </div>
@@ -40,7 +40,7 @@ const CartItem = () => {
               <div className="w-20">
                 <div className="relative">
                   <select
-                    className="block appearance-none border bg-white hover:border-green-800 px-11 py-2 pr-8 shadow leading-tight"
+                    className="block appearance-none border bg-transparent hover:border-green-800 px-11 py-2 pr-8 shadow-md leading-tight rounded-md"
                     value={selectedQuantity}
                     onChange={handleQuantityChange}
                   >
@@ -58,7 +58,7 @@ const CartItem = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex gap-1 mt-1 items-center">
+              <div className="flex gap-1 items-center">
                 <p className="text-sm text-gray-600">Price: </p>
                 <p className="primary-80">₹1200</p>
               </div>

@@ -68,6 +68,12 @@ const NavBar = () => {
   const handleInputChange = (e) => {
     setQuery(e.target.value);
   };
+
+  //Cart Count
+  const [cartItem, setCartItem] = useState(0);
+  useEffect(() => {
+    setCartItem(cartItem);
+  }, []);
   return (
     <section className={`primary-80 border-b-2 bg-white w-full px-1.5 py-0.5`}>
       <div className=" container mx-auto">
@@ -96,9 +102,9 @@ const NavBar = () => {
               </span>
             </Link>
           </div>
-          <div className="flex items-center gap-2 md:order-2">
-            <div className="flex gap-2 items-center">
-              <div className="relative">
+          <div className="flex items-center gap-4 md:order-2">
+            <div className="flex gap-3 items-center">
+              <div className="relative z-20">
                 <button type="button" onClick={onMouseSearchClick}>
                   {isSearchOpen ? (
                     <AiOutlineClose className="text-2xl mt-2" />
@@ -110,10 +116,10 @@ const NavBar = () => {
                 <div
                   className={`${
                     isSearchOpen ? "block" : "hidden"
-                  } absolute right-0 mt-3 primary-80 border border-green-800 shadow w-max mx-auto`}
+                  } absolute right-0 mt-3 primary-80 border border-green-800 backdrop-filter bg-white  shadow-md rounded-md w-max mx-auto`}
                   id="search-dropdown"
                 >
-                  <div className="py-2 px-5 bg-white">
+                  <div className="py-2 px-5">
                     <div className="border-b-2 border-green-800 flex items-center">
                       <AiOutlineSearch className="text-gray-400 mr-2 text-2xl" />
                       <input
@@ -121,7 +127,7 @@ const NavBar = () => {
                         placeholder="Search..."
                         value={query}
                         onChange={handleInputChange}
-                        className="w-full py-2 focus:outline-none focus:border-green-800"
+                        className="w-full py-2 focus:outline-none focus:border-green-800 bg-transparent"
                       />
                       {query && (
                         <button
@@ -141,8 +147,11 @@ const NavBar = () => {
                 </Link>
               </div>
               <div>
-                <Link to="/cart">
+                <Link to="/cart" className="relative">
                   <AiOutlineShopping className="text-2xl" />
+                  <span className="inline-flex absolute top-0 items-center rounded-full bg-primary-80 px-1.5 py-0.5 text-xs text-white ">
+                    {cartItem}
+                  </span>
                 </Link>
               </div>
             </div>
@@ -158,7 +167,7 @@ const NavBar = () => {
               {/* Dropdown menu */}
 
               <div
-                className="z-50 hidden absolute right-0 mt-3 bg-white primary-80 border border-green-800 shadow"
+                className="z-50 hidden absolute right-0 mt-3 bg-white primary-80 border border-green-800 rounded-md shadow-md"
                 id="user-dropdown"
               >
                 {authState.isLoggedIn ? (
@@ -172,7 +181,7 @@ const NavBar = () => {
                   <span></span>
                 )}
                 {authState.isLoggedIn ? (
-                  <ul className="bg-white" aria-labelledby="user-menu-button">
+                  <ul className="" aria-labelledby="user-menu-button">
                     <li>
                       <Link
                         to="/myaccount"
@@ -200,7 +209,7 @@ const NavBar = () => {
                     <li>
                       <Link
                         to="/login"
-                        className="block px-4 py-2 text-sm primary-80 hover:bg-green-950 hover:text-white"
+                        className="block px-4 py-2 text-sm primary-80 hover:bg-green-950 hover:text-white rounded-b"
                         onClick={onLogout}
                       >
                         Logout
@@ -212,7 +221,7 @@ const NavBar = () => {
                     <li>
                       <Link
                         to="/login"
-                        className="block px-4 py-2 text-sm primary-80 hover:bg-green-950 hover:text-white"
+                        className="block px-4 py-2 text-sm primary-80 hover:bg-green-950 hover:text-white rounded"
                         onClick={onLogout}
                       >
                         Login
@@ -233,7 +242,7 @@ const NavBar = () => {
               <li>
                 <Link
                   to="/"
-                  className="block py-2 lg:text-center text-left lg:w-36 w-auto pl-5 md:pl-0 hover:bg-green-950 hover:text-white"
+                  className="block py-2 lg:text-center text-left lg:w-36 w-auto pl-5 md:pl-0 hover:bg-green-950 hover:text-white hover:rounded-md hover:shadow-md"
                   aria-current="page"
                 >
                   Home
@@ -242,18 +251,25 @@ const NavBar = () => {
               <li>
                 <Link
                   to="650a7be17575e3b87f3f1d03"
-                  className="block py-2 lg:text-center text-left lg:w-36 w-auto pl-5 md:pl-0 hover:bg-green-950 hover:text-white"
+                  className="block py-2 lg:text-center text-left lg:w-36 w-auto pl-5 md:pl-0 hover:bg-green-950 hover:text-white hover:rounded-md hover:shadow-md"
                 >
                   Men
                 </Link>
               </li>
               <li>
                 <Link
-                  key={5}
                   to="650a7bf77575e3b87f3f1d05"
-                  className="block py-2 lg:text-center text-left lg:w-36 w-auto pl-5 md:pl-0 hover:bg-green-950 hover:text-white"
+                  className="block py-2 lg:text-center text-left lg:w-36 w-auto pl-5 md:pl-0 hover:bg-green-950 hover:text-white hover:rounded-md hover:shadow-md"
                 >
                   Women
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="650a7bf77575e3b87f3f1d05"
+                  className="block py-2 lg:text-center text-left lg:w-36 w-auto pl-5 md:pl-0 hover:bg-green-950 hover:text-white hover:rounded-md hover:shadow-md"
+                >
+                  Unisex
                 </Link>
               </li>
               <li>
@@ -273,7 +289,7 @@ const NavBar = () => {
                       id="dropdownHover"
                       className={`z-10 p-1 mt-2 ${
                         isCatOpen ? "block" : "hidden"
-                      }  absolute md:right-0 bg-white min-w-max border border-green-800 shadow`}
+                      }  absolute md:right-0 bg-white min-w-max border border-green-800 shadow-md rounded-md`}
                     >
                       <ul className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2">
                         {categoryData.map((list) => (

@@ -82,7 +82,7 @@ const Cart = () => {
                     <div className="py-2 px-4">
                       <div className="w-full mb-2">
                         <Link to="/information">
-                          <button className="py-2 w-full font-semibold text-center bg-primary hover:bg-green-950 hover:text-white">
+                          <button className="py-2 w-full font-semibold text-center bg-primary hover:bg-green-950 hover:text-white rounded-md shadow-md">
                             Proceed to Buy
                           </button>
                         </Link>
@@ -116,7 +116,7 @@ const Cart = () => {
             <div className="mb-5 mt-3">
               <Link
                 to="/"
-                className="py-3 px-10 text-center font-medium border-2 border-[#272f25] hover:bg-[#272f25] hover:text-white"
+                className="py-3 px-10 text-center font-medium border-2 border-[#272f25] hover:bg-[#272f25] hover:text-white rounded-md shadow-md"
               >
                 Continue Shopping
               </Link>
