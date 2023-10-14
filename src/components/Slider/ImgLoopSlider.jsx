@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 // import required modules
 import { Pagination, Navigation } from "swiper/modules";
 
-const ImgLoopSlider = ({ link, src, alt, title, customDiv }) => {
+const ImgLoopSlider = ({ loopSliderImg }) => {
   return (
     <>
       <section className="mx-auto">
@@ -24,15 +24,19 @@ const ImgLoopSlider = ({ link, src, alt, title, customDiv }) => {
           modules={[Pagination, Navigation]}
           className="mySwiper"
         >
-          {Array.from({ length: 15 }, (_, index) => (
+          {loopSliderImg.map((item, index) => (
             <SwiperSlide key={index}>
               <div className="">
-                <Link to={link}>
-                  <img src={src} alt={alt} />
+                <Link to={item.link}>
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className="rounded-md shadow-md"
+                  />
                   <h3 className="text-center text-md font-semibold mt-2">
-                    {title}
+                    {item.title}
                   </h3>
-                  {customDiv}
+                  {item.customDiv}
                 </Link>
               </div>
             </SwiperSlide>

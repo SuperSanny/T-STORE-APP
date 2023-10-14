@@ -18,6 +18,11 @@ import heartWhite from "../assets/images/heartWhite.png";
 import heartRed from "../assets/images/heartRed.png";
 import userImg from "../assets/images/user.png";
 import cartitemImg from "../assets/images/cartitem.png";
+import design from "../assets/p-images/design.jpeg";
+import design1 from "../assets/p-images/design1.jpeg";
+import design2 from "../assets/p-images/design2.jpeg";
+import design3 from "../assets/p-images/design3.jpeg";
+import poster from "../assets/p-images/poster.png";
 const Images = {
   appleIcon,
   googleIcon,
@@ -39,5 +44,10 @@ const Images = {
   heartRed,
   userImg,
   cartitemImg,
+  design,
+  design1,
+  design2,
+  design3,
+  poster,
 };
 export default Images;

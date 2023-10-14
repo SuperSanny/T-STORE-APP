@@ -10,12 +10,12 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Scrollbar } from "swiper/modules";
-const ImgSlider = ({ link, src, alt, title, customDiv }) => {
+const ImgSlider = ({ sliderImg }) => {
   return (
     <section className="container mx-auto">
       <Swiper
         slidesPerView={4}
-        spaceBetween={5}
+        spaceBetween={10}
         // pagination={{
         //   dynamicBullets: true,
         // }}
@@ -25,15 +25,19 @@ const ImgSlider = ({ link, src, alt, title, customDiv }) => {
         modules={[Scrollbar]}
         className="mySwiper"
       >
-        {Array.from({ length: 15 }, (_, index) => (
+        {sliderImg.map((item, index) => (
           <SwiperSlide key={index}>
             <div className="">
-              <Link to={link}>
-                <img src={src} alt={alt} />
+              <Link to={item.link}>
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="rounded-md shadow-md"
+                />
                 <h3 className="text-center text-md font-semibold mt-2">
-                  {title}
+                  {item.title}
                 </h3>
-                {customDiv}
+                {item.customDiv}
               </Link>
             </div>
           </SwiperSlide>

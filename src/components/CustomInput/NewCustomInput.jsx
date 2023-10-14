@@ -26,7 +26,7 @@ const NewCustomInput = ({ id, type, placeholder, className, min, max }) => {
         onChange={handleInputChange}
         // onKeyPress={handleEnterKeyPress}
         placeholder={placeholder}
-        className={`focus:outline-none p-2 w-full border border-green-800 ${className}`}
+        className={`focus:outline-none p-2 w-full border border-green-800 ${className} rounded-md`}
       />
     </div>
   );

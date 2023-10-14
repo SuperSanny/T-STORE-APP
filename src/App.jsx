@@ -1,12 +1,15 @@
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import MainRoutes from "./routes/MainRoutes";
+import AppRoutes from "./routes/AppRoutes";
+// import MainRoutes from "./routes/MainRoutes";
 
 function App() {
   // const [count, setCount] = useState(0);
 
   return (
     <>
-      <MainRoutes />
+      <RouterProvider router={AppRoutes} />
+      {/* <MainRoutes /> */}
     </>
   );
 }

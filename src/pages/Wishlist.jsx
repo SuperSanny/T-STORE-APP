@@ -1,6 +1,5 @@
 import Meta from "../components/Meta";
 import ProductCard from "../components/ProductCard";
-import { RxCross2 } from "react-icons/rx";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 const Wishlist = () => {
@@ -8,7 +7,7 @@ const Wishlist = () => {
   return (
     <>
       <Meta title="Wishlist" />
-      <section className="container mx-auto py-1 px-4">
+      <section className="container mx-auto py-1 px-4 ">
         <div className="flex flex-col items-center justify-center">
           <div>
             <lord-icon
@@ -29,7 +28,7 @@ const Wishlist = () => {
                 <p>Log in to sync your list.</p>
                 <Link
                   to="/login"
-                  className="btn login-btn w-1/3 md:w-1/6 mx-auto mb-3 py-2"
+                  className="btn login-btn w-1/3 md:w-1/6 mx-auto mb-3 py-2 rounded-md shadow-md"
                 >
                   LOG IN
                 </Link>
@@ -40,8 +39,9 @@ const Wishlist = () => {
                     <img
                       src="https://media.boohoo.com/i/boohoo/bmm54800_orange_xl?w=675&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit"
                       alt="CROCHET KNITTED TANK"
+                      className="rounded-md shadow-md"
                     />
-                    <h3 className="text-center text-xs font-semibold hover:underline mt-2">
+                    <h3 className="text-center text-xs font-semibold hover:underline mt-4">
                       CROCHET KNITTED TANK
                     </h3>
                   </Link>
@@ -51,8 +51,9 @@ const Wishlist = () => {
                     <img
                       src="https://media.boohoo.com/i/boohoo/bmm02540_bark_xl?w=675&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit"
                       alt="SLIM MAN SHORT SLEEVE PIQUE POLO"
+                      className="rounded-md shadow-md"
                     />
-                    <h3 className="text-center text-xs font-semibold hover:underline mt-2">
+                    <h3 className="text-center text-xs font-semibold hover:underline mt-4">
                       SLIM MAN SHORT SLEEVE PIQUE POLO
                     </h3>
                   </Link>
@@ -62,8 +63,9 @@ const Wishlist = () => {
                     <img
                       src="https://media.boohoo.com/i/boohoo/bmm60028_black_xl?w=675&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit"
                       alt="OVERSIZED HOMME GRAPHIC T-SHIRT"
+                      className="rounded-md shadow-md"
                     />
-                    <h3 className="text-center text-xs font-semibold hover:underline mt-2">
+                    <h3 className="text-center text-xs font-semibold hover:underline mt-4">
                       OVERSIZED HOMME GRAPHIC T-SHIRT
                     </h3>
                   </Link>
@@ -73,8 +75,9 @@ const Wishlist = () => {
                     <img
                       src="https://media.boohoo.com/i/boohoo/bmm54198_white_xl?w=675&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit"
                       alt="OVERSIZED HOMME PRINT TANK"
+                      className="rounded-md shadow-md"
                     />
-                    <h3 className="text-center text-xs font-semibold hover:underline mt-2">
+                    <h3 className="text-center text-xs font-semibold hover:underline mt-4">
                       OVERSIZED HOMME PRINT TANK
                     </h3>
                   </Link>
@@ -88,11 +91,13 @@ const Wishlist = () => {
         <section className="container mx-auto py-3 px-4">
           <div className="flex flex-wrap gap-5 justify-center">
             <div className="flex flex-col relative">
-              <ProductCard />
-              <button className="bg-primary-80 text-white absolute top-1 right-1  ">
-                <RxCross2 className="hover:scale-110 text-2xl" />
-              </button>
-              <button className="btn login-btn py-2">Add to cart</button>
+              <ProductCard
+                customDiv={
+                  <button className="login-btn py-2 w-full mt-2 rounded-md">
+                    Add to cart
+                  </button>
+                }
+              />
             </div>
           </div>
         </section>

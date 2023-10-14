@@ -190,8 +190,8 @@ const Payment = () => {
             <div className="flex flex-col gap-5 mt-2 pr-16">
               <p>Please Choose Your Payment Method</p>
             </div>
-            <div className="py-3">
-              <div className="mb-4 border border-gray-200 dark:border-gray-700">
+            <div className="py-3 ">
+              <div className="mb-4 border border-green-800 rounded-md">
                 <ul
                   className="flex flex-wrap -mb-px text-sm font-medium text-center"
                   id="myTab"
@@ -362,7 +362,7 @@ const Payment = () => {
                                 </div>
                                 <div>
                                   <button
-                                    className="login-btn w-full font-semibold py-2 px-3"
+                                    className="login-btn w-full font-semibold py-2 px-3 rounded-md shadow-md"
                                     type="submit"
                                   >
                                     Pay ₹1250
@@ -437,7 +437,7 @@ const Payment = () => {
                                     </label>
                                   </div>
                                   <button
-                                    className="login-btn w-full font-semibold mt-2 py-2 px-3"
+                                    className="login-btn w-full font-semibold mt-2 py-2 px-3 rounded-md shadow-md"
                                     type="submit"
                                   >
                                     Verify
@@ -452,7 +452,7 @@ const Payment = () => {
                         <div>
                           {" "}
                           <button
-                            className="login-btn w-full md:w-1/2 font-semibold mt-2 py-2 px-3"
+                            className="login-btn w-full md:w-1/2 font-semibold mt-2 py-2 px-3 shadow-md rounded-md"
                             type="submit"
                           >
                             Pay ₹1250

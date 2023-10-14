@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 const CustomInput = (props) => {
-  const { type, name, id, placeholder, className, onChange, value } = props;
+  const { type, name, id, placeholder, className, onChange, value, onBlur } =
+    props;
   return (
     <>
       <input
@@ -11,6 +12,7 @@ const CustomInput = (props) => {
         className={`form-control accent-[#272f25] ${className}`}
         onChange={onChange}
         value={value}
+        onBlur={onBlur}
       />
     </>
   );

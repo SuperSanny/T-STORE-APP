@@ -2,19 +2,102 @@ import { Link } from "react-router-dom";
 import ImgSlider from "../components/Slider/ImgSlider";
 import EffectCard from "../components/Slider/EffectCard";
 import ImgLoopSlider from "../components/Slider/ImgLoopSlider";
-
+import Images from "../constant/Images";
 const Home = () => {
+  const loopSliderImg = [
+    {
+      link: "#",
+      src: Images.design2,
+      alt: "",
+    },
+    {
+      link: "#",
+      src: Images.design1,
+      alt: "",
+    },
+    {
+      link: "#",
+      src: Images.design3,
+      alt: "",
+    },
+    {
+      link: "#",
+      src: Images.design2,
+      alt: "",
+    },
+    {
+      link: "#",
+      src: Images.design1,
+      alt: "",
+    },
+    {
+      link: "#",
+      src: Images.design3,
+      alt: "",
+    },
+    {
+      link: "#",
+      src: Images.design2,
+      alt: "",
+    },
+    {
+      link: "#",
+      src: Images.design1,
+      alt: "",
+    },
+    {
+      link: "#",
+      src: Images.design3,
+      alt: "",
+    },
+  ];
+  const sliderImg = [
+    {
+      alt: "",
+      src: Images.design,
+    },
+    {
+      alt: "",
+      src: Images.design,
+    },
+    {
+      alt: "",
+      src: Images.design,
+    },
+    {
+      alt: "",
+      src: Images.design,
+    },
+    {
+      alt: "",
+      src: Images.design,
+    },
+    {
+      alt: "",
+      src: Images.design,
+    },
+  ];
+  const effectCardImg = [
+    {
+      src: "https://images.unsplash.com/photo-1616006897093-5e4635c0de35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1622445272461-c6580cab8755?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dCUyMHNoaXJ0JTIwbW9ja3VwfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHQlMjBzaGlydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1571945153237-4929e783af4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHQlMjBzaGlydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60",
+    },
+  ];
   return (
     <>
       <div className="my-2">
-        <ImgLoopSlider
-          link="#"
-          src="https://images.bewakoof.com/uploads/grid/app/1X1-b3at999--1--1695995766.jpg"
-          alt=""
-        />
+        <ImgLoopSlider loopSliderImg={loopSliderImg} />
       </div>
-      <div className="container mx-auto">
-        <div className="mb-2">
+      <div className="mx-auto">
+        <div className="mb-2  bg-[#b8d8b320] py-5">
           <h1 className="text-center text-lg font-bold mb-2">
             TRENDING CATEGORIES
           </h1>
@@ -23,18 +106,20 @@ const Home = () => {
               <img
                 src="https://images.bewakoof.com/uploads/grid/app/DOTW-Split-banner-Desktop-Men-1695095464.jpg"
                 alt="Design of the Week"
+                className="rounded-l-md shadow-md"
               />
             </Link>
             <Link to="#">
               <img
                 src="https://images.bewakoof.com/uploads/grid/app/DOTW-Split-banner-Desktop-Women-1695095464.jpg"
                 alt=""
+                className="rounded-r-md shadow-md"
               />
             </Link>
           </div>
         </div>
-        <div>
-          <h1 className="text-center text-lg font-bold mb-2">
+        <div className="">
+          <h1 className="text-center text-lg font-bold mb-2 ">
             TRENDING CATEGORIES
           </h1>
           <div className="flex flex-wrap justify-center">
@@ -117,21 +202,13 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div className="bg-[#b8d8b320] py-5">
         <h1 className="text-center text-lg font-bold mb-2">BESTSELLERS</h1>
-        <ImgSlider
-          link="#"
-          src="https://images.bewakoof.com/uploads/grid/app/category-box-new-240x350-men-fullsleeve-1686063034.jpg"
-          alt=""
-        />
+        <ImgSlider sliderImg={sliderImg} />
       </div>
 
-      <div className="flex flex-wrap items-start justify-center gap-2 md:gap-20 px-5 py-5">
-        <EffectCard
-          link="#"
-          src="https://images.bewakoof.com/uploads/grid/app/category-box-new-240x350-men-fullsleeve-1686063034.jpg"
-          alt=""
-        />
+      <div className="flex flex-wrap items-center justify-center gap-2 md:gap-20 px-5 py-5">
+        <EffectCard effectCardImg={effectCardImg} />
         <div className="flex flex-col gap-2">
           <h1 className="text-4xl font-semibold">This is Product Slider.</h1>
           <p className="text-xl font-medium text-gray-500">

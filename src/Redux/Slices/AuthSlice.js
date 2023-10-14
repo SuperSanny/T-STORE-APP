@@ -12,16 +12,16 @@ export const login = createAsyncThunk("auth/login", async (data) => {
   try {
     const response = axiosInstance.post("user/login", data);
     toast.promise(response, {
-      loading: "Submitting form",
+      loading: "Wait! authenticating your account...",
       success: "Successfully logined in",
-      error: "Something went wrong, try again",
+      error: "Failed to authenticate your account",
     });
     return await response;
   } catch (error) {
     if (error?.response?.data?.err) {
       toast.error(error?.response?.data?.err);
     } else {
-      toast.error("Cannot signin, something went wrong");
+      toast.error("Cannot Login, something went wrong");
     }
   }
 });
@@ -30,19 +30,23 @@ export const signup = createAsyncThunk("auth/signup", async (data) => {
   try {
     const response = axiosInstance.post("user/signup", data);
     toast.promise(response, {
-      loading: "Submitting form",
+      loading: "Wait! Creating your account...",
       success: "Successfully signed up",
-      error: "Something went wrong, try again",
+      error: "Failed to create your account",
     });
-    return await response;
+    if (response.status === 200) {
+      return response.data;
+    }
+    throw new Error("Registration failed");
   } catch (error) {
-    toast.error("Cannot signup, something went wrong");
+    toast.error("Cannot Creating, something went wrong");
+    throw error;
   }
 });
 
 const authSlice = createSlice({
   name: "auth",
-  initialState,
+  initialState: initialState,
   reducers: {
     logout: (state) => {
       state.isLoggedIn = false;
