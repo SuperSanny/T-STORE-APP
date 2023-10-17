@@ -21,7 +21,7 @@ const BorderCustomInput = ({ id, type, label, value, onChange }) => {
           id={id}
           value={inputValue}
           onChange={handleInputChange}
-          className="block py-2.5 px-3 w-full text-sm font-semibold priamry-80 bg-transparent border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border focus:border-green-800 peer"
+          className="block py-2.5 px-3 w-full text-sm font-semibold priamry-80 bg-transparent border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border focus:border-green-800 peer rounded-md"
           placeholder=" "
         />
         <label

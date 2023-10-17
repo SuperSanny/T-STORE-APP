@@ -41,7 +41,7 @@ const AppRoutes = createBrowserRouter([
         element: <Products />,
       },
       {
-        path: "/p/:id",
+        path: "p/:id",
         element: <ProductOrder />,
       },
       {

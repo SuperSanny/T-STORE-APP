@@ -14,6 +14,11 @@ const ImgLoopSlider = ({ loopSliderImg }) => {
     <>
       <section className="mx-auto">
         <Swiper
+          style={{
+            "--swiper-navigation-size": "16px",
+            "--swiper-navigation-color": "#272f25",
+            "--swiper-pagination-color": "#272f25",
+          }}
           slidesPerView={3}
           spaceBetween={30}
           loop={true}

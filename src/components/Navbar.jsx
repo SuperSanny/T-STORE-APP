@@ -266,7 +266,7 @@ const NavBar = () => {
               </li>
               <li>
                 <Link
-                  to="650a7bf77575e3b87f3f1d05"
+                  to="650a7c057575e3b87f3f1d07"
                   className="block py-2 lg:text-center text-left lg:w-36 w-auto pl-5 md:pl-0 hover:bg-green-950 hover:text-white hover:rounded-md hover:shadow-md"
                 >
                   Unisex
@@ -292,16 +292,45 @@ const NavBar = () => {
                       }  absolute md:right-0 bg-white min-w-max border border-green-800 shadow-md rounded-md`}
                     >
                       <ul className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2">
-                        {categoryData.map((list) => (
-                          <li key={list.id} className="w-48">
-                            <Link
-                              to={`p/${list.id}`}
-                              className="block px-2 py-2 text-sm hover:bg-green-950 hover:text-white truncate"
-                            >
-                              {list.name}
-                            </Link>
-                          </li>
-                        ))}
+                        {categoryData ? (
+                          categoryData.map((list) => (
+                            <li key={list.id} className="w-48">
+                              <Link
+                                to={`/${list.id}`}
+                                className="block px-2 py-2 text-sm hover:bg-green-950 hover:text-white truncate hover:rounded-md hover:shadow-md"
+                              >
+                                {list.name}
+                              </Link>
+                            </li>
+                          ))
+                        ) : (
+                          <>
+                            <li className="w-48">
+                              <Link
+                                to="#"
+                                className="block px-2 py-2 text-sm hover:bg-green-950 hover:text-white truncate hover:rounded-md hover:shadow-md"
+                              >
+                                {`Printed T-Shirts`}
+                              </Link>
+                            </li>
+                            <li className="w-48">
+                              <Link
+                                to="#"
+                                className="block px-2 py-2 text-sm hover:bg-green-950 hover:text-white truncate hover:rounded-md hover:shadow-md"
+                              >
+                                {`Oversized T-shirts`}
+                              </Link>
+                            </li>
+                            <li className="w-48">
+                              <Link
+                                to="#"
+                                className="block px-2 py-2 text-sm hover:bg-green-950 hover:text-white truncate hover:rounded-md hover:shadow-md"
+                              >
+                                {`Fashion T-Shirts`}
+                              </Link>
+                            </li>
+                          </>
+                        )}
                       </ul>
                     </div>
                   </div>

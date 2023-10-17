@@ -28,6 +28,7 @@ const Products = () => {
   // const navigate = useNavigate();
   const id = params.id;
   // const [products, setProducts] = useState([]);
+  // const authState = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const productState = useSelector((state) => state.product.productList);
   useEffect(() => {
@@ -53,6 +54,7 @@ const Products = () => {
       key: i + 1,
       id: productState[i]._id,
       title: productState[i].name,
+      image: productState[i].image[0],
       brand: "T-STORE",
       description: productState[i].description,
       color: productState[i].color,
@@ -60,7 +62,6 @@ const Products = () => {
       original_price: productState[i].original_price,
       discount: productState[i].discount,
       size: productState[i].size,
-      image: productState[i].image,
     });
   }
   // console.log(productData);
@@ -107,20 +108,34 @@ const Products = () => {
               </select>
             </div>
             <div className="mt-5 flex flex-wrap justify-around gap-5">
-              {productData.map((product) => (
-                <ProductCard
-                  key={product.key}
-                  id={product.id}
-                  slug={product.slug}
-                  title={product.title}
-                  brand={product.brand}
-                  description={product.description}
-                  price={product.price}
-                  original_price={product.original_price}
-                  discount={product.discount}
-                  color={product.color}
-                />
-              ))}
+              {productState ? (
+                productData.map((product) => (
+                  <ProductCard
+                    key={product.key}
+                    id={product.id}
+                    image={product.image}
+                    slug={product.slug}
+                    title={product.title}
+                    brand={product.brand}
+                    description={product.description}
+                    price={product.price}
+                    original_price={product.original_price}
+                    discount={product.discount}
+                    color={product.color}
+                  />
+                ))
+              ) : (
+                <>
+                  <ProductCard />
+                  <ProductCard />
+                  <ProductCard />
+                  <ProductCard />
+                  <ProductCard />
+                  <ProductCard />
+                  <ProductCard />
+                  <ProductCard />
+                </>
+              )}
             </div>
           </div>
         </div>
