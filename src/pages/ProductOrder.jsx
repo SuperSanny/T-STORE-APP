@@ -7,15 +7,26 @@ import { SlLocationPin } from "react-icons/sl";
 import { useEffect, useState } from "react";
 import axiosInstance from "../config/axiosInstance";
 import { MdOutlineDescription } from "react-icons/md";
+import ThumbSlider from "../components/Slider/ThumbSlider";
+
 const ProductOrder = () => {
   let params = useParams();
   const id = params.id;
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [thumbSliderImages, setThumbSliderImages] = useState([]);
   async function getProduct() {
     try {
       const response = await axiosInstance.get("tshirt/" + id);
-      setProduct(response?.data?.tshirts);
+      const productData = response?.data?.tshirts;
+      if (productData) {
+        setProduct(productData);
+        const images = productData.image.map((image, index) => ({
+          alt: index,
+          src: image,
+        }));
+        setThumbSliderImages(images);
+      }
       setLoading(false);
     } catch (error) {
       console.log(error);
@@ -31,8 +42,30 @@ const ProductOrder = () => {
   } else {
     const items = [
       { label: "Home", url: "/" },
-      { label: "Product", url: "/products" },
+      { label: "Product", url: "/650a7be17575e3b87f3f1d03" },
       { label: `${product.name}` },
+    ];
+    const thumbSliderImg = [
+      {
+        alt: "",
+        src: "https://images.bewakoof.com/t1080/men-rock-n-roll-regular-graphic-printed-t-shirt-608737-1696418579-1.jpg",
+      },
+      {
+        alt: "",
+        src: "https://images.bewakoof.com/t1080/men-rock-n-roll-regular-graphic-printed-t-shirt-608737-1696418584-2.jpg",
+      },
+      {
+        alt: "",
+        src: "https://images.bewakoof.com/t1080/men-rock-n-roll-regular-graphic-printed-t-shirt-608737-1696418590-3.jpg",
+      },
+      {
+        alt: "",
+        src: "https://images.bewakoof.com/t1080/men-rock-n-roll-regular-graphic-printed-t-shirt-608737-1696418595-4.jpg",
+      },
+      {
+        alt: "",
+        src: "https://images.bewakoof.com/t1080/men-rock-n-roll-regular-graphic-printed-t-shirt-608737-1696418602-5.jpg",
+      },
     ];
     return (
       <>
@@ -43,10 +76,12 @@ const ProductOrder = () => {
             <div className="sm:col-span-1 lg:col-span-1 xl:col-span-1 2xl:col-span-1"></div>
             <div className="sm:col-span-1 lg:col-span-2 xl:col-span-2 2xl:col-span-2">
               <div className="px-3 py-3">
-                <img
-                  src="https://images.bewakoof.com/t1080/men-tie-dye-oversize-plain-t-shirt-574128-1684998800-1.jpg"
-                  alt="images"
-                  className="w-full"
+                <ThumbSlider
+                  thumbSliderImg={
+                    thumbSliderImages.length > 0
+                      ? thumbSliderImages
+                      : thumbSliderImg
+                  }
                 />
               </div>
             </div>
@@ -54,15 +89,15 @@ const ProductOrder = () => {
               <div className="py-3 px-3 flex flex-col">
                 <div className="sm:w-full md:w-full lg:w-11/12">
                   <div>
-                    <h1 className="brand text-xl font-semibold text-gray-700">
+                    {/* <h1 className="brand text-xl font-semibold text-gray-700">
                       T-STORE
-                    </h1>
+                    </h1> */}
                     <p className="text-md font-medium text-gray-500">
                       {product.name}
                     </p>
                   </div>
                   <div>
-                    <div className="border-2 border-gray-600 w-14 p-1 mt-2 bg-gray-100 flex gap-2">
+                    <div className="border-2 border-gray-600 w-14 p-1 mt-2 bg-gray-100 flex gap-2 rounded-md">
                       <AiFillStar className="text-yellow-400 text-md" />
                       <p className="text-gray-900 font-semibold text-xs">4.5</p>
                     </div>
@@ -158,7 +193,7 @@ const ProductOrder = () => {
                     <div className="relative mt-2">
                       <input
                         type="text"
-                        className="py-2 px-2 border-2 text-sm w-full outline-none text-gray-950 placeholder-gray-400"
+                        className="py-2 px-3 border-2 text-sm w-full outline-none text-gray-950 placeholder-gray-400 rounded-md"
                         placeholder="Your Email Address"
                         aria-label="Your Email Address"
                       />

@@ -9,12 +9,12 @@ const ProductCard = (props) => {
   const {
     id,
     slug,
+    image,
     brand,
     title,
     price,
     original_price,
     discount,
-    color,
     customDiv,
   } = props;
   const [addToWishlistCart, setAddToeWishlistCart] = useState(false);
@@ -40,13 +40,9 @@ const ProductCard = (props) => {
             </button>
           </div>
         </div>
-        <Link to={`p/${id}`} className="">
+        <Link to={`/p/${id}`} className="">
           <div className="product-image">
-            <img
-              src="https://images.bewakoof.com/t640/men-s-white-customizable-oversized-t-shirt-620626-1695292116-1.jpg"
-              className="w-full rounded-md"
-              alt="productImage"
-            />
+            <img src={image} className="w-full rounded-md" alt="productImage" />
           </div>
           <div className="product-details flex flex-col gap-1 mt-1">
             <div className="flex justify-between">
@@ -63,7 +59,7 @@ const ProductCard = (props) => {
             </h5>
             <div className="flex items-center justify-between">
               <div>
-                {color}
+                {/* <p>{color}</p> */}
                 <Colors />
               </div>
               <div className="flex items-center">
