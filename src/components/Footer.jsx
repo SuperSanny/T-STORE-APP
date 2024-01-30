@@ -72,7 +72,7 @@ const Footer = () => {
                   <BsYoutube className="hover:text-[#C31A1E;]" />
                 </Link>
               </div>
-              <p>&copy; 2023 T-STORE. All rights reserved.</p>
+              <p>&copy; {new Date().getFullYear()} T-STORE. All rights reserved.</p>
             </div>
           </div>
         </div>
